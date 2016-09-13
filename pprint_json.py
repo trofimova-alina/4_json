@@ -2,12 +2,15 @@ import json
 
 
 def load_data(filepath):
-    pass
+    with open(filepath, 'r') as raw_content:
+        data = json.load(raw_content)
+    return data
 
 
 def pretty_print_json(data):
-    pass
+    print(json.dumps(data, ensure_ascii=False, sort_keys=True, indent=4))
 
 
 if __name__ == '__main__':
-    pass
+    data = load_data('Alco_drinks.json')
+    pretty_print_json(data)
